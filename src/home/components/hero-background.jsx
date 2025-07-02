@@ -67,13 +67,13 @@ export function HeroBackground({ sx, ...other }) {
           position: 'absolute',
           background: `
             linear-gradient(180deg, rgba(255,255,255,0.12) 12%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.12) 88%),
-            linear-gradient(180deg, ${theme.vars.palette.background.default} 0%, rgba(25, 118, 210, 0.15) 30%, rgba(25, 118, 210, 0.25) 50%, rgba(25, 118, 210, 0.15) 70%, ${theme.vars.palette.background.default} 100%)
+            linear-gradient(180deg, ${theme.vars.palette.background.default} 0%, rgba(${theme.vars.palette.primary.mainChannel} / 0.03) 30%, rgba(${theme.vars.palette.primary.mainChannel} / 0.05) 50%, rgba(${theme.vars.palette.primary.mainChannel} / 0.03) 70%, ${theme.vars.palette.background.default} 100%)
           `,
           backdropFilter: 'blur(6px)',
           ...theme.applyStyles('dark', {
             background: `
               linear-gradient(180deg, rgba(20,26,33,0.2) 12%, rgba(20,26,33,0.1) 50%, rgba(20,26,33,0.2) 88%),
-              linear-gradient(180deg, ${theme.vars.palette.background.default} 0%, rgba(25, 118, 210, 0.2) 30%, rgba(25, 118, 210, 0.3) 50%, rgba(25, 118, 210, 0.2) 70%, ${theme.vars.palette.background.default} 100%)
+              linear-gradient(180deg, ${theme.vars.palette.background.default} 0%, rgba(${theme.vars.palette.primary.mainChannel} / 0.04) 30%, rgba(${theme.vars.palette.primary.mainChannel} / 0.06) 50%, rgba(${theme.vars.palette.primary.mainChannel} / 0.04) 70%, ${theme.vars.palette.background.default} 100%)
             `,
           }),
         }),
