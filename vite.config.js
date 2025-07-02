@@ -32,7 +32,7 @@ export default defineConfig({
   },
   build: {
     target: 'es2015',
-    cssCodeSplit: true,
+    cssCodeSplit: false,
     chunkSizeWarningLimit: 1000,
     minify: 'terser',
     terserOptions: {
@@ -40,6 +40,7 @@ export default defineConfig({
         drop_console: true,
         drop_debugger: true,
         pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'],
+        passes: 2,
       },
       mangle: {
         safari10: true,
@@ -54,6 +55,13 @@ export default defineConfig({
           carousel: ['embla-carousel', 'embla-carousel-react', 'embla-carousel-autoplay'],
           i18n: ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
           utils: ['minimal-shared/utils', 'minimal-shared/hooks'],
+        },
+        assetFileNames: (assetInfo) => {
+          // Don't generate CSS files
+          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+            return 'assets/[name].[hash][extname]';
+          }
+          return 'assets/[name].[hash][extname]';
         },
       },
     },

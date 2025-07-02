@@ -4,7 +4,6 @@ import { varAlpha } from 'minimal-shared/utils';
 import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-import { CONFIG } from 'src/global-config';
 
 import { MotionContainer } from 'src/components/animate';
 
@@ -60,26 +59,15 @@ export function HeroBackground({ sx, ...other }) {
       animate={{ opacity: 1 }}
       sx={[
         (theme) => ({
-          ...theme.mixins.bgGradient({
-            images: [
-              `linear-gradient(180deg, ${theme.vars.palette.background.default} 12%, ${varAlpha(theme.vars.palette.background.defaultChannel, 0.92)} 50%, ${theme.vars.palette.background.default} 88%)`,
-              `url(${CONFIG.assetsDir}/assets/background/background-3.webp)`,
-            ],
-          }),
           top: 0,
           left: 0,
           width: 1,
           height: 1,
           zIndex: -1,
           position: 'absolute',
+          background: `linear-gradient(180deg, ${theme.vars.palette.background.default} 0%, rgba(25, 118, 210, 0.05) 30%, rgba(25, 118, 210, 0.08) 50%, rgba(25, 118, 210, 0.05) 70%, ${theme.vars.palette.background.default} 100%)`,
           ...theme.applyStyles('dark', {
-            ...theme.mixins.bgGradient({
-              images: [
-                `url(${CONFIG.assetsDir}/assets/images/home/hero-blur.webp)`,
-                `linear-gradient(180deg, ${theme.vars.palette.background.default} 12%, ${varAlpha(theme.vars.palette.background.defaultChannel, 0.96)} 50%, ${theme.vars.palette.background.default} 88%)`,
-                `url(${CONFIG.assetsDir}/assets/background/background-3.webp)`,
-              ],
-            }),
+            background: `linear-gradient(180deg, ${theme.vars.palette.background.default} 0%, rgba(25, 118, 210, 0.08) 30%, rgba(25, 118, 210, 0.12) 50%, rgba(25, 118, 210, 0.08) 70%, ${theme.vars.palette.background.default} 100%)`,
           }),
         }),
       ]}
