@@ -1,5 +1,7 @@
 import 'src/global.css';
 
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
 import { ThemeProvider } from 'src/theme/theme-provider';
 import { LocalizationProvider } from 'src/locales/localization-provider';
 
@@ -24,6 +26,7 @@ export function App() {
               <ProgressBar />
               <Snackbar />
               <Router />
+              <SpeedInsights />
             </MotionLazy>
           </ThemeProvider>
         </LocalizationProvider>
