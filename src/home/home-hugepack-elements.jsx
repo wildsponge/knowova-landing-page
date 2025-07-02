@@ -80,12 +80,9 @@ export function HomeHugePackElements({ sx, ...other }) {
                       }
                     }}
                   >
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1, width: '100%' }}>
-                      <Iconify icon="solar:code-bold-duotone" width={32} height={32} sx={{ color: 'primary.main' }} />
-                      <Typography variant="h6" sx={{ fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1, minWidth: 0 }}>
-                        Tech
-                      </Typography>
-                    </Box>
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                      Tech
+                    </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
                       Coding, AI, web design
                     </Typography>
@@ -109,12 +106,9 @@ export function HomeHugePackElements({ sx, ...other }) {
                       }
                     }}
                   >
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1, width: '100%' }}>
-                      <Iconify icon="solar:heart-pulse-bold-duotone" width={32} height={32} sx={{ color: 'error.main' }} />
-                      <Typography variant="h6" sx={{ fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1, minWidth: 0 }}>
-                        Health
-                      </Typography>
-                    </Box>
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                      Health
+                    </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
                       Fitness, diets, wellness
                     </Typography>
@@ -138,12 +132,9 @@ export function HomeHugePackElements({ sx, ...other }) {
                       }
                     }}
                   >
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1, width: '100%' }}>
-                      <Iconify icon="solar:suitcase-bold-duotone" width={32} height={32} sx={{ color: 'info.main' }} />
-                      <Typography variant="h6" sx={{ fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1, minWidth: 0 }}>
-                        Travel
-                      </Typography>
-                    </Box>
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                      Travel
+                    </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
                       Culture, travel, guides
                     </Typography>
@@ -167,12 +158,9 @@ export function HomeHugePackElements({ sx, ...other }) {
                       }
                     }}
                   >
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1, width: '100%' }}>
-                      <Iconify icon="solar:dollar-bold-duotone" width={32} height={32} sx={{ color: 'success.main' }} />
-                      <Typography variant="h6" sx={{ fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1, minWidth: 0 }}>
-                        Finance
-                      </Typography>
-                    </Box>
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                      Finance
+                    </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
                       Investing, budget, trade
                     </Typography>
@@ -196,12 +184,9 @@ export function HomeHugePackElements({ sx, ...other }) {
                       }
                     }}
                   >
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1, width: '100%' }}>
-                      <Iconify icon="solar:book-bold-duotone" width={32} height={32} sx={{ color: 'secondary.main' }} />
-                      <Typography variant="h6" sx={{ fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1, minWidth: 0 }}>
-                        Education
-                      </Typography>
-                    </Box>
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                      Education
+                    </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
                       Learning, skills, degrees
                     </Typography>
@@ -225,12 +210,9 @@ export function HomeHugePackElements({ sx, ...other }) {
                       }
                     }}
                   >
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1, width: '100%' }}>
-                      <Iconify icon="solar:chef-hat-bold-duotone" width={32} height={32} sx={{ color: 'warning.main' }} />
-                      <Typography variant="h6" sx={{ fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1, minWidth: 0 }}>
-                        Food
-                      </Typography>
-                    </Box>
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                      Food
+                    </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
                       Cooking, drinks, recipes
                     </Typography>
@@ -254,12 +236,9 @@ export function HomeHugePackElements({ sx, ...other }) {
                       }
                     }}
                   >
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1, width: '100%' }}>
-                      <Iconify icon="solar:t-shirt-bold-duotone" width={32} height={32} sx={{ color: 'error.light' }} />
-                      <Typography variant="h6" sx={{ fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1, minWidth: 0 }}>
-                        Fashion
-                      </Typography>
-                    </Box>
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                      Fashion
+                    </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
                       Styles, trends, designs
                     </Typography>
@@ -283,12 +262,9 @@ export function HomeHugePackElements({ sx, ...other }) {
                       }
                     }}
                   >
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1, width: '100%' }}>
-                      <Iconify icon="solar:home-bold-duotone" width={32} height={32} sx={{ color: 'info.dark' }} />
-                      <Typography variant="h6" sx={{ fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1, minWidth: 0 }}>
-                        Home
-                      </Typography>
-                    </Box>
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                      Home
+                    </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
                       DIY tips, gardens, decor
                     </Typography>
@@ -313,12 +289,9 @@ export function HomeHugePackElements({ sx, ...other }) {
                       }
                     }}
                   >
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1, width: '100%' }}>
-                      <Iconify icon="solar:football-bold-duotone" width={32} height={32} sx={{ color: 'success.dark' }} />
-                      <Typography variant="h6" sx={{ fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1, minWidth: 0 }}>
-                        Sports
-                      </Typography>
-                    </Box>
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                      Sports
+                    </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
                       Training, rules, tactics
                     </Typography>

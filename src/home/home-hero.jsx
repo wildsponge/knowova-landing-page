@@ -138,9 +138,9 @@ export function HomeHero({ sx, ...other }) {
             },
           }}
         >
-          <Avatar sx={{ bgcolor: '#1976d2' }}>A</Avatar>
-          <Avatar sx={{ bgcolor: '#f57c00' }}>B</Avatar>
-          <Avatar sx={{ bgcolor: '#388e3c' }}>C</Avatar>
+          <Avatar src="/assets/images/mock/avatar/avatar-1.webp" />
+          <Avatar src="/assets/images/mock/avatar/avatar-2.webp" />
+          <Avatar src="/assets/images/mock/avatar/avatar-3.webp" />
         </AvatarGroup>
         3.8K+ Happy learners
       </Box>
