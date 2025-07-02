@@ -3,23 +3,6 @@ import checker from 'vite-plugin-checker';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 
-// Plugin to suppress CSS file generation and references
-const suppressCSS = () => ({
-  name: 'suppress-css',
-  generateBundle(options, bundle) {
-    // Remove all CSS files from the bundle
-    Object.keys(bundle).forEach(fileName => {
-      if (fileName.endsWith('.css')) {
-        delete bundle[fileName];
-      }
-    });
-  },
-  transformIndexHtml(html) {
-    // Remove CSS link tags from HTML
-    return html.replace(/<link rel="stylesheet"[^>]*>/gi, '');
-  },
-});
-
 // ----------------------------------------------------------------------
 
 const PORT = 3030;
@@ -38,7 +21,6 @@ export default defineConfig({
         initialIsOpen: false,
       },
     }),
-    suppressCSS(),
   ],
   resolve: {
     alias: [
