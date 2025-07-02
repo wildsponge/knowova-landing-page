@@ -39,6 +39,10 @@ export default defineConfig({
       compress: {
         drop_console: true,
         drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'],
+      },
+      mangle: {
+        safari10: true,
       },
     },
     rollupOptions: {
@@ -49,6 +53,7 @@ export default defineConfig({
           motion: ['framer-motion'],
           carousel: ['embla-carousel', 'embla-carousel-react', 'embla-carousel-autoplay'],
           i18n: ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
+          utils: ['minimal-shared/utils', 'minimal-shared/hooks'],
         },
       },
     },

@@ -137,7 +137,12 @@ export function HomeTestimonials({ sx, ...other }) {
             </Typography>
 
             <Box sx={{ gap: 2, display: 'flex', alignItems: 'center' }}>
-              <Avatar alt={item.name} src={item.avatar} sx={{ width: 48, height: 48 }} />
+              <Avatar 
+                alt={item.name} 
+                src={item.avatar} 
+                sx={{ width: 48, height: 48 }}
+                imgProps={{ loading: 'lazy' }}
+              />
               <Stack sx={{ typography: 'subtitle1' }}>
                 <Box component="span">{item.name}</Box>
 

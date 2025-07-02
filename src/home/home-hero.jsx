@@ -141,6 +141,7 @@ export function HomeHero({ sx, ...other }) {
               key={_mock.fullName(index + 1)}
               alt={_mock.fullName(index + 1)}
               src={_mock.image.avatar(index + 1)}
+              imgProps={{ loading: 'lazy' }}
             />
           ))}
         </AvatarGroup>

@@ -1,19 +1,36 @@
+import { lazy, Suspense } from 'react';
 import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
 
 import { BackToTopButton } from 'src/components/animate/back-to-top-button';
 import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
 
 import { HomeHero } from '../home-hero';
-import { HomeFAQs } from '../home-faqs';
-import { HomePricing } from '../home-pricing';
-import { HomeTestimonials } from '../home-testimonials';
-import { HomeIntegrations } from '../home-integrations';
-import { HomeHugePackElements } from '../home-hugepack-elements';
+
+// Lazy load heavy components
+const HomeFAQs = lazy(() => import('../home-faqs').then(module => ({ default: module.HomeFAQs })));
+const HomePricing = lazy(() => import('../home-pricing').then(module => ({ default: module.HomePricing })));
+const HomeTestimonials = lazy(() => import('../home-testimonials').then(module => ({ default: module.HomeTestimonials })));
+const HomeIntegrations = lazy(() => import('../home-integrations').then(module => ({ default: module.HomeIntegrations })));
+const HomeHugePackElements = lazy(() => import('../home-hugepack-elements').then(module => ({ default: module.HomeHugePackElements })));
 
 // ----------------------------------------------------------------------
 
 export function HomeView() {
   const pageProgress = useScrollProgress();
+
+  const LoadingFallback = () => (
+    <Box 
+      sx={{ 
+        height: 200, 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center' 
+      }}
+    >
+      {/* Minimal loading indicator */}
+    </Box>
+  );
 
   return (
     <>
@@ -28,37 +45,35 @@ export function HomeView() {
       <HomeHero />
 
       <Stack sx={{ position: 'relative', bgcolor: 'background.default' }}>
-        {/* <div id="features">
-          <HomeMinimal />
-        </div> */}
-
         <div id="features">
-          <HomeHugePackElements />
+          <Suspense fallback={<LoadingFallback />}>
+            <HomeHugePackElements />
+          </Suspense>
         </div>
 
-        {/* <HomeForDesigner /> */}
-
-        {/* <HomeHighlightFeatures /> */}
-
         <div id="integrations">
-          <HomeIntegrations />
+          <Suspense fallback={<LoadingFallback />}>
+            <HomeIntegrations />
+          </Suspense>
         </div>
 
         <div id="pricing">
-          <HomePricing />
+          <Suspense fallback={<LoadingFallback />}>
+            <HomePricing />
+          </Suspense>
         </div>
 
         <div id="testimonials">
-          <HomeTestimonials />
+          <Suspense fallback={<LoadingFallback />}>
+            <HomeTestimonials />
+          </Suspense>
         </div>
 
         <div id="faq">
-          <HomeFAQs />
+          <Suspense fallback={<LoadingFallback />}>
+            <HomeFAQs />
+          </Suspense>
         </div>
-
-        {/* <HomeZoneUI /> */}
-
-        {/* <HomeAdvertisement /> */}
       </Stack>
     </>
   );
