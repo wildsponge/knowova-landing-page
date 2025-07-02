@@ -65,10 +65,16 @@ export function HeroBackground({ sx, ...other }) {
           height: 1,
           zIndex: -1,
           position: 'absolute',
-          background: `linear-gradient(180deg, #FFFFFF 12%, rgba(255,255,255,0.92) 50%, #FFFFFF 88%)`,
+          background: `
+            linear-gradient(180deg, rgba(255,255,255,0.12) 12%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.12) 88%),
+            linear-gradient(180deg, ${theme.vars.palette.background.default} 0%, rgba(${theme.vars.palette.primary.mainChannel} / 0.15) 30%, rgba(${theme.vars.palette.primary.mainChannel} / 0.25) 50%, rgba(${theme.vars.palette.primary.mainChannel} / 0.15) 70%, ${theme.vars.palette.background.default} 100%)
+          `,
           backdropFilter: 'blur(6px)',
           ...theme.applyStyles('dark', {
-            background: `linear-gradient(180deg, #141A21 12%, rgba(20,26,33,0.96) 50%, #141A21 88%)`,
+            background: `
+              linear-gradient(180deg, rgba(20,26,33,0.2) 12%, rgba(20,26,33,0.1) 50%, rgba(20,26,33,0.2) 88%),
+              linear-gradient(180deg, ${theme.vars.palette.background.default} 0%, rgba(${theme.vars.palette.primary.mainChannel} / 0.2) 30%, rgba(${theme.vars.palette.primary.mainChannel} / 0.3) 50%, rgba(${theme.vars.palette.primary.mainChannel} / 0.2) 70%, ${theme.vars.palette.background.default} 100%)
+            `,
           }),
         }),
       ]}
