@@ -67,6 +67,8 @@ export function MainLayout({ sx, cssVars, children, slotProps, layoutQuery = 'md
               href="#pricing"
               sx={(theme) => ({
                 display: 'none',
+                minHeight: { xs: 36, sm: 40 },
+                px: { xs: 2, sm: 2.5 },
                 [theme.breakpoints.up(layoutQuery)]: { display: 'inline-flex' },
               })}
             >
