@@ -52,7 +52,7 @@ export function MainLayout({ sx, cssVars, children, slotProps, layoutQuery = 'md
             <Button
               variant="outlined"
               color="inherit"
-              href="/auth/login"
+              href="https://knowova.com/auth/a/login"
               sx={{ 
                 minHeight: { xs: 36, sm: 40 },
                 px: { xs: 2, sm: 2.5 }
@@ -64,7 +64,7 @@ export function MainLayout({ sx, cssVars, children, slotProps, layoutQuery = 'md
             {/** @slot Get Started button */}
             <Button
               variant="contained"
-              href="#pricing"
+              href="https://knowova.com/auth/a/register"
               sx={(theme) => ({
                 display: 'none',
                 minHeight: { xs: 36, sm: 40 },
