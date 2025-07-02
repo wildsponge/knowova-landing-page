@@ -54,8 +54,8 @@ export function MainLayout({ sx, cssVars, children, slotProps, layoutQuery = 'md
               color="inherit"
               href="https://app.knowova.com/auth/a/login"
               sx={{ 
-                minHeight: { xs: 36, sm: 40 },
-                px: { xs: 2, sm: 2.5 }
+                minHeight: { xs: 32, sm: 36 },
+                px: { xs: 1.5, sm: 2 }
               }}
             >
               Sign In
@@ -67,8 +67,8 @@ export function MainLayout({ sx, cssVars, children, slotProps, layoutQuery = 'md
               href="https://app.knowova.com/auth/a/register"
               sx={(theme) => ({
                 display: 'none',
-                minHeight: { xs: 36, sm: 40 },
-                px: { xs: 2, sm: 2.5 },
+                minHeight: { xs: 32, sm: 36 },
+                px: { xs: 1.5, sm: 2 },
                 [theme.breakpoints.up(layoutQuery)]: { display: 'inline-flex' },
               })}
             >
