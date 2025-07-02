@@ -65,9 +65,9 @@ export function HeroBackground({ sx, ...other }) {
           height: 1,
           zIndex: -1,
           position: 'absolute',
-          background: `linear-gradient(180deg, ${theme.vars.palette.background.default} 0%, rgba(25, 118, 210, 0.05) 30%, rgba(25, 118, 210, 0.08) 50%, rgba(25, 118, 210, 0.05) 70%, ${theme.vars.palette.background.default} 100%)`,
+          background: `linear-gradient(180deg, ${theme.vars.palette.background.default} 0%, ${theme.vars.palette.primary.main}0D 30%, ${theme.vars.palette.primary.main}14 50%, ${theme.vars.palette.primary.main}0D 70%, ${theme.vars.palette.background.default} 100%)`,
           ...theme.applyStyles('dark', {
-            background: `linear-gradient(180deg, ${theme.vars.palette.background.default} 0%, rgba(25, 118, 210, 0.08) 30%, rgba(25, 118, 210, 0.12) 50%, rgba(25, 118, 210, 0.08) 70%, ${theme.vars.palette.background.default} 100%)`,
+            background: `linear-gradient(180deg, ${theme.vars.palette.background.default} 0%, ${theme.vars.palette.primary.main}14 30%, ${theme.vars.palette.primary.main}1F 50%, ${theme.vars.palette.primary.main}14 70%, ${theme.vars.palette.background.default} 100%)`,
           }),
         }),
       ]}
