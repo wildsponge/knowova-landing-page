@@ -1,4 +1,3 @@
-import { useId } from 'react';
 import { mergeClasses } from 'minimal-shared/utils';
 
 import Link from '@mui/material/Link';
@@ -12,8 +11,6 @@ import { logoClasses } from './classes';
 
 export function Logo({ sx, disabled, className, href = '/', isSingle = true, ...other }) {
   const theme = useTheme();
-
-  const uniqueId = useId();
 
   const TEXT_PRIMARY = theme.vars.palette.text.primary;
   const PRIMARY_LIGHT = theme.vars.palette.primary.light;

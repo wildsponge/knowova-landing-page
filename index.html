@@ -6,10 +6,26 @@
     <meta name="theme-color" content="#000000" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Knowova - AI-Powered Learning Platform</title>
+    <link rel="preload" href="/assets/illustrations/illustration-integration-optimized.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/assets/public-sans-latin-wght-normal-DdeTHZLK.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/inter-latin-wght-normal-Dx4kXJAl.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//api.iconify.design" />
+    <style>
+      /* Critical CSS for above-the-fold content */
+      *,*::before,*::after{box-sizing:border-box}
+      body{margin:0;font-family:system-ui,sans-serif;line-height:1.5;background:#fff}
+      #root{min-height:100vh}
+      .loading{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border:3px solid #f3f3f3;border-top:3px solid #1976d2;border-radius:50%;animation:spin 1s linear infinite}
+      @keyframes spin{0%{transform:translate(-50%,-50%) rotate(0deg)}100%{transform:translate(-50%,-50%) rotate(360deg)}}
+    </style>
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading"></div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

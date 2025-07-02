@@ -1,6 +1,6 @@
 import { addCollection } from '@iconify/react';
 
-import allIcons from './icon-sets';
+import allIcons from './icon-sets-optimized';
 
 // ----------------------------------------------------------------------
 
