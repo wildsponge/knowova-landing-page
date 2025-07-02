@@ -1,0 +1,123 @@
+import { Outlet } from 'react-router';
+
+import Box from '@mui/material/Box';
+import Alert from '@mui/material/Alert';
+import Button from '@mui/material/Button';
+
+import { usePathname } from 'src/routes/hooks';
+
+import { Logo } from 'src/components/logo';
+
+import { NavDesktop } from './nav/desktop';
+import { Footer, HomeFooter } from './footer';
+import { navData as mainNavData } from '../nav-config-main';
+import { MainSection, LayoutSection, HeaderSection } from '../core';
+
+// ----------------------------------------------------------------------
+
+export function MainLayout({ sx, cssVars, children, slotProps, layoutQuery = 'md' }) {
+  const pathname = usePathname();
+
+
+  const isHomePage = pathname === '/';
+
+  const navData = slotProps?.nav?.data ?? mainNavData;
+
+  const renderHeader = () => {
+    const headerSlots = {
+      topArea: (
+        <Alert severity="info" sx={{ display: 'none', borderRadius: 0 }}>
+          This is an info Alert.
+        </Alert>
+      ),
+      leftArea: (
+        <>
+          {/** @slot Logo */}
+          <Logo />
+        </>
+      ),
+      rightArea: (
+        <>
+          {/** @slot Nav desktop */}
+          <NavDesktop
+            data={navData}
+            sx={(theme) => ({
+              display: 'none',
+              [theme.breakpoints.up(layoutQuery)]: { mr: 2.5, display: 'flex' },
+            })}
+          />
+
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 } }}>
+            {/** @slot Sign In button */}
+            <Button
+              variant="outlined"
+              color="inherit"
+              href="/auth/login"
+              sx={{ 
+                minHeight: { xs: 36, sm: 40 },
+                px: { xs: 2, sm: 2.5 }
+              }}
+            >
+              Sign In
+            </Button>
+            
+            {/** @slot Get Started button */}
+            <Button
+              variant="contained"
+              href="#pricing"
+              sx={(theme) => ({
+                display: 'none',
+                [theme.breakpoints.up(layoutQuery)]: { display: 'inline-flex' },
+              })}
+            >
+              Get Started
+            </Button>
+          </Box>
+        </>
+      ),
+    };
+
+    return (
+      <HeaderSection
+        layoutQuery={layoutQuery}
+        {...slotProps?.header}
+        slots={{ ...headerSlots, ...slotProps?.header?.slots }}
+        slotProps={slotProps?.header?.slotProps}
+        sx={slotProps?.header?.sx}
+      />
+    );
+  };
+
+  const renderFooter = () =>
+    isHomePage ? (
+      <HomeFooter sx={slotProps?.footer?.sx} />
+    ) : (
+      <Footer sx={slotProps?.footer?.sx} layoutQuery={layoutQuery} />
+    );
+
+  const renderMain = () => (
+    <MainSection {...slotProps?.main}>
+      {children || <Outlet />}
+    </MainSection>
+  );
+
+  return (
+    <LayoutSection
+      /** **************************************
+       * @Header
+       *************************************** */
+      headerSection={renderHeader()}
+      /** **************************************
+       * @Footer
+       *************************************** */
+      footerSection={renderFooter()}
+      /** **************************************
+       * @Styles
+       *************************************** */
+      cssVars={cssVars}
+      sx={sx}
+    >
+      {renderMain()}
+    </LayoutSection>
+  );
+}
