@@ -213,7 +213,7 @@ export function HomeFAQs({ sx, ...other }) {
           color="inherit"
           variant="contained"
           href="mailto:hello@knowova.com?subject=[Question] from Potential Student"
-          startIcon={<Iconify icon="solar:letter-bold" />}
+          startIcon={<Iconify icon="eva:email-fill" />}
         >
           Contact us
         </Button>
