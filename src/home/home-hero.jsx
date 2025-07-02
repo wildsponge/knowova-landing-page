@@ -172,6 +172,11 @@ export function HomeHero({ sx, ...other }) {
             fullWidth
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                window.location.href = 'https://knowova.com/auth/a/register';
+              }
+            }}
             placeholder="What do you want to learn?"
             variant="outlined"
             InputProps={{
@@ -192,9 +197,7 @@ export function HomeHero({ sx, ...other }) {
             variant="contained"
             color="primary"
             onClick={() => {
-              if (searchValue.trim()) {
-                console.log('Searching for:', searchValue);
-              }
+              window.location.href = 'https://knowova.com/auth/a/register';
             }}
             sx={{ 
               height: 50, 
