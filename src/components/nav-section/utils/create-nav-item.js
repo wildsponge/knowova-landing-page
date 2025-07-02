@@ -4,6 +4,21 @@ import { RouterLink } from 'src/routes/components';
 
 // ----------------------------------------------------------------------
 
+// Custom smooth scroll handler for anchor links
+const handleAnchorClick = (e, path) => {
+  if (path.startsWith('/#')) {
+    e.preventDefault();
+    const targetId = path.substring(2); // Remove '/#'
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+};
+
 export function createNavItem({
   path,
   icon,
@@ -18,8 +33,16 @@ export function createNavItem({
   const subItem = !rootItem;
   const subDeepItem = Number(depth) > 2;
 
+  // Handle anchor links with smooth scrolling
+  const isAnchorLink = path.startsWith('/#');
+  
   const linkProps = externalLink
     ? { href: path, target: '_blank', rel: 'noopener noreferrer' }
+    : isAnchorLink
+    ? { 
+        href: path,
+        onClick: (e) => handleAnchorClick(e, path)
+      }
     : { component: RouterLink, href: path };
 
   const baseProps = hasChild && !enabledRootRedirect ? { component: 'div' } : linkProps;

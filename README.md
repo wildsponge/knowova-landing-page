@@ -1,6 +1,6 @@
-# Landing Page
+# Knowova Landing Page
 
-This is the extracted landing page from the Minimal UI Kit project. It contains all the animations, components, images, and features from the original home page.
+Knowova's AI-powered learning platform landing page. This modern, responsive landing page showcases our educational technology platform with smooth animations, interactive components, and engaging features.
 
 ## Getting Started
 

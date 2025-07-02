@@ -37,19 +37,25 @@ export function HomeView() {
           <HomeMinimal />
         </div> */}
 
-        <HomeHugePackElements />
+        <div id="features">
+          <HomeHugePackElements />
+        </div>
 
         {/* <HomeForDesigner /> */}
 
         {/* <HomeHighlightFeatures /> */}
 
-        <HomeIntegrations />
+        <div id="integrations">
+          <HomeIntegrations />
+        </div>
 
         <div id="pricing">
           <HomePricing />
         </div>
 
-        <HomeTestimonials />
+        <div id="testimonials">
+          <HomeTestimonials />
+        </div>
 
         <div id="faq">
           <HomeFAQs />

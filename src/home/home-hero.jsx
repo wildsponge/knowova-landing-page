@@ -174,7 +174,7 @@ export function HomeHero({ sx, ...other }) {
             onChange={(e) => setSearchValue(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === 'Enter') {
-                window.location.href = 'https://knowova.com/auth/a/register';
+                window.location.href = 'https://app.knowova.com/auth/a/register';
               }
             }}
             placeholder="What do you want to learn?"
@@ -197,7 +197,7 @@ export function HomeHero({ sx, ...other }) {
             variant="contained"
             color="primary"
             onClick={() => {
-              window.location.href = 'https://knowova.com/auth/a/register';
+              window.location.href = 'https://app.knowova.com/auth/a/register';
             }}
             sx={{ 
               height: 50, 

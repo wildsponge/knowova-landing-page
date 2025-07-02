@@ -3,9 +3,9 @@ import { HomeView } from 'src/home/view';
 // ----------------------------------------------------------------------
 
 const metadata = {
-  title: 'Minimals UI: The starting point for your next project',
+  title: 'Knowova - AI-Powered Learning Platform',
   description:
-    'The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style',
+    'Transform your learning experience with Knowova - the intelligent education platform that adapts to your learning style and helps you achieve your academic goals',
 };
 
 export function HomePage() {

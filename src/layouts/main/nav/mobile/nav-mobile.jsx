@@ -84,7 +84,7 @@ export function NavMobile({ data, open, onClose, slots, sx }) {
           <Button
             fullWidth
             variant="contained"
-            href="https://knowova.com/auth/a/register"
+            href="https://app.knowova.com/auth/a/register"
           >
             Get Started
           </Button>
