@@ -144,7 +144,7 @@ export function HomeHero({ sx, ...other }) {
             />
           ))}
         </AvatarGroup>
-        3.6K+ Happy learners
+        3.8K+ Happy learners
       </Box>
     </m.div>
   );
