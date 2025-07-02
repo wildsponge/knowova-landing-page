@@ -12,7 +12,6 @@ import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 
-import { _mock } from 'src/_mock';
 
 import { Iconify } from 'src/components/iconify';
 import { varFade, MotionContainer } from 'src/components/animate';
@@ -133,17 +132,15 @@ export function HomeHero({ sx, ...other }) {
             [`& .${avatarClasses.root}`]: {
               width: 32,
               height: 32,
+              backgroundColor: 'primary.main',
+              fontSize: 14,
+              fontWeight: 600,
             },
           }}
         >
-          {Array.from({ length: 3 }, (_, index) => (
-            <Avatar
-              key={_mock.fullName(index + 1)}
-              alt={_mock.fullName(index + 1)}
-              src={_mock.image.avatar(index + 1)}
-              imgProps={{ loading: 'lazy' }}
-            />
-          ))}
+          <Avatar sx={{ bgcolor: '#1976d2' }}>A</Avatar>
+          <Avatar sx={{ bgcolor: '#f57c00' }}>B</Avatar>
+          <Avatar sx={{ bgcolor: '#388e3c' }}>C</Avatar>
         </AvatarGroup>
         3.8K+ Happy learners
       </Box>
@@ -377,10 +374,10 @@ export function HomeHero({ sx, ...other }) {
 
 function useTransformY(value, distance) {
   const physics = {
-    mass: 0.1,
-    damping: 20,
-    stiffness: 300,
-    restDelta: 0.001,
+    mass: 0.3,
+    damping: 30,
+    stiffness: 100,
+    restDelta: 0.01,
   };
 
   return useSpring(useTransform(value, [0, 1], [0, distance]), physics);
@@ -394,18 +391,14 @@ function useScrollPercent() {
   const [percent, setPercent] = useState(0);
 
   useMotionValueEvent(scrollY, 'change', (scrollHeight) => {
-    let heroHeight = 0;
-
-    if (elementRef.current) {
-      heroHeight = elementRef.current.offsetHeight;
-    }
-
-    const scrollPercent = Math.floor((scrollHeight / heroHeight) * 100);
-
-    if (scrollPercent >= 100) {
-      setPercent(100);
-    } else {
-      setPercent(Math.floor(scrollPercent));
+    if (!elementRef.current) return;
+    
+    const heroHeight = elementRef.current.offsetHeight;
+    const scrollPercent = Math.min(100, Math.floor((scrollHeight / heroHeight) * 100));
+    
+    // Throttle updates - only update if change is significant
+    if (Math.abs(scrollPercent - percent) > 2) {
+      setPercent(scrollPercent);
     }
   });
 

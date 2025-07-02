@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { m } from 'framer-motion';
 import { varAlpha } from 'minimal-shared/utils';
 
@@ -8,9 +7,6 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import Accordion, { accordionClasses } from '@mui/material/Accordion';
 
 import { Iconify } from 'src/components/iconify';
 import { varFade, MotionViewport } from 'src/components/animate';
@@ -123,11 +119,6 @@ const FAQs = [
 // ----------------------------------------------------------------------
 
 export function HomeFAQs({ sx, ...other }) {
-  const [expanded, setExpanded] = useState(FAQs[0].question);
-
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
 
   const renderDescription = () => (
     <SectionTitle
@@ -153,13 +144,10 @@ export function HomeFAQs({ sx, ...other }) {
       ]}
     >
       {FAQs.map((item, index) => (
-        <Accordion
+        <Box
           key={item.question}
-          disableGutters
-          component={m.div}
+          component={m.details}
           variants={varFade('inUp', { distance: 24 })}
-          expanded={expanded === item.question}
-          onChange={handleChange(item.question)}
           sx={(theme) => ({
             transition: theme.transitions.create(['background-color'], {
               duration: theme.transitions.duration.shorter,
@@ -171,21 +159,30 @@ export function HomeFAQs({ sx, ...other }) {
             '&:hover': {
               bgcolor: varAlpha(theme.vars.palette.grey['500Channel'], 0.08),
             },
-            [`&.${accordionClasses.expanded}`]: {
+            '&[open]': {
               bgcolor: varAlpha(theme.vars.palette.grey['500Channel'], 0.08),
+            },
+            '& > summary': {
+              listStyle: 'none',
+              cursor: 'pointer',
+              outline: 'none',
+              '&::-webkit-details-marker': {
+                display: 'none',
+              },
             },
           })}
         >
-          <AccordionSummary
+          <Box
+            component="summary"
             id={`home-faqs-panel${index}-header`}
             aria-controls={`home-faqs-panel${index}-content`}
           >
             <Typography component="span" variant="h6">
               {item.question}
             </Typography>
-          </AccordionSummary>
-          <AccordionDetails>{item.answer}</AccordionDetails>
-        </Accordion>
+          </Box>
+          <Box sx={{ pt: 1 }}>{item.answer}</Box>
+        </Box>
       ))}
     </Box>
   );
